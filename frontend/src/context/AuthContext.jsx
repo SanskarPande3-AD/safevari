@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
 
       // The supplied backend has HTTP Basic enabled but no /auth/login endpoint.
       await http.get('/api/health', { headers });
-      const { data: users } = await http.get('/users', { headers });
+      const { data: users } = await http.get('/api/users', { headers });
       const matchingUser = users.find((user) => user.mobile === mobile.trim());
 
       if (!matchingUser) {
